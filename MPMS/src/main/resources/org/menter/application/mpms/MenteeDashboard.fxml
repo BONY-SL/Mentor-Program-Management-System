@@ -72,7 +72,7 @@
                                         <TableView layoutX="4.0" layoutY="41.0" prefHeight="302.0" prefWidth="842.0">
                                             <columns>
                                                 <TableColumn prefWidth="75.0" text="ID" />
-                                                <TableColumn prefWidth="418.4000778198242" text="Mentee Name" />
+                                                <TableColumn prefWidth="418.4000778198242" text="Mentor Name" />
                                                 <TableColumn prefWidth="347.9999694824219" text="Group No" />
                                                 <TableColumn minWidth="0.0" prefWidth="0.0" />
                                             </columns>
