@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,10 +19,10 @@
             <children>
                 <BorderPane layoutX="144.0" layoutY="100.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <top>
-                        <AnchorPane prefHeight="30.0" prefWidth="1100.0" style="-fx-background-color: #00b3b3;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="1100.0" style="-fx-background-color: #80d4ff;" BorderPane.alignment="CENTER" />
                     </top>
                     <left>
-                        <AnchorPane prefHeight="590.0" prefWidth="229.0" style="-fx-background-color: #00b3b3;" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="590.0" prefWidth="229.0" style="-fx-background-color: #80d4ff;" BorderPane.alignment="CENTER">
                             <children>
                                 <ImageView fitHeight="97.0" fitWidth="111.0" layoutX="62.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -62,24 +63,67 @@
                             <children>
                                 <AnchorPane layoutX="9.0" layoutY="12.0" prefHeight="190.0" prefWidth="854.0" style="-fx-region-border: 5;" stylesheets="@AdminDashboard.css">
                                     <children>
-                                        <AnchorPane layoutX="38.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #00b3b3; -fx-background-radius: 20;" AnchorPane.bottomAnchor="15.400000000000006" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="581.2" AnchorPane.topAnchor="19.0" />
-                                        <AnchorPane layoutX="315.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #00b3b3; -fx-background-radius: 20;" />
-                                        <AnchorPane layoutX="587.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #00b3b3; -fx-background-radius: 20;" />
+                                        <AnchorPane layoutX="38.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #80d4ff; -fx-background-radius: 20;" AnchorPane.bottomAnchor="15.400000000000006" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="581.2" AnchorPane.topAnchor="19.0">
+                                 <effect>
+                                    <InnerShadow choke="0.03" height="33.28" radius="11.315000000000001" width="13.98" />
+                                 </effect></AnchorPane>
+                                        <AnchorPane layoutX="315.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #80d4ff; -fx-background-radius: 20;">
+                                 <effect>
+                                    <InnerShadow choke="0.05" height="26.85" radius="13.8025" width="30.36" />
+                                 </effect>
+                                 <children>
+                                    <Label layoutX="55.0" layoutY="109.0" text="GROUP DETAILS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="93.0" fitWidth="130.0" layoutX="75.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@people.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
+                                        <AnchorPane layoutX="587.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #80d4ff; -fx-background-radius: 20;">
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="105.0" text="UPDATE PROFILE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="93.0" fitWidth="130.0" layoutX="75.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@social.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
+                              <ImageView fitHeight="93.0" fitWidth="130.0" layoutX="106.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@tv.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="71.0" layoutY="130.0" text="SHOW PROGRAMME">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
                                     </children>
                                 </AnchorPane>
                                 <AnchorPane layoutX="9.0" layoutY="208.0" prefHeight="355.0" prefWidth="855.0">
                                     <children>
                                         <TableView layoutX="4.0" layoutY="41.0" prefHeight="302.0" prefWidth="842.0">
                                             <columns>
-                                                <TableColumn prefWidth="75.0" text="ID" />
-                                                <TableColumn prefWidth="418.4000778198242" text="Mentor Name" />
-                                                <TableColumn prefWidth="347.9999694824219" text="Group No" />
-                                                <TableColumn minWidth="0.0" prefWidth="0.0" />
+                                                <TableColumn prefWidth="75.0" text="Group ID" />
+                                    <TableColumn prefWidth="363.99999237060547" text="Group Name" />
+                                    <TableColumn prefWidth="113.60006713867188" text="Mentor Id" />
+                                    <TableColumn prefWidth="289.5999755859375" text="Mentor Name" />
                                             </columns>
                                         </TableView>
-                                        <Label layoutX="366.0" layoutY="8.0" prefHeight="27.0" prefWidth="135.0" text="GROUP DETAILS">
+                                        <Label layoutX="366.0" layoutY="8.0" prefHeight="27.0" prefWidth="145.0" text="GROUP DETAILS">
                                             <font>
-                                                <Font size="18.0" />
+                                                <Font name="System Bold" size="18.0" />
                                             </font>
                                         </Label>
                                     </children>
