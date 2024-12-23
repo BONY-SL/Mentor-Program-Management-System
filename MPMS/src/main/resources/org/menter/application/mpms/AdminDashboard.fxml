@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.menter.application.mpms.AdminDashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.menter.application.mpms.AdminDashboardController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -27,21 +27,45 @@
                            <image>
                               <Image url="@user1.png" />
                            </image></ImageView>
-                        <Button layoutX="7.0" layoutY="475.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="215.0" style="-fx-background-radius: 10;" text="LOGOUT" />
+                        <Button fx:id="logOutButton" layoutX="51.0" layoutY="481.0" mnemonicParsing="false" onAction="#logOut" prefHeight="33.0" prefWidth="120.0" style="-fx-background-radius: 20; -fx-background-color: #3498db; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);" text="LOGOUT" />
                         <Label layoutX="28.0" layoutY="105.0" text="WELCOME ADMIN">
                            <font>
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
                         <Line endX="205.1999969482422" endY="-1.52587890625E-5" layoutX="22.0" layoutY="142.0" startX="-21.999996185302734" startY="-1.52587890625E-5" />
-                        <Label layoutX="14.0" layoutY="223.0" prefHeight="30.0" prefWidth="58.0" text="Name :" textAlignment="CENTER" />
-                        <Label layoutX="14.0" layoutY="261.0" prefHeight="30.0" prefWidth="58.0" text="Email  :" textAlignment="CENTER" />
-                        <Label layoutX="14.0" layoutY="300.0" prefHeight="30.0" prefWidth="58.0" text="Role   :" textAlignment="CENTER" />
-                        <Label layoutX="14.0" layoutY="183.0" prefHeight="30.0" prefWidth="58.0" text="User Id :" textAlignment="CENTER" />
-                        <Label layoutX="72.0" layoutY="187.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
-                        <Label layoutX="72.0" layoutY="263.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
-                        <Label layoutX="72.0" layoutY="225.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
-                        <Label layoutX="72.0" layoutY="302.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
+                        <Label layoutX="14.0" layoutY="223.0" prefHeight="30.0" prefWidth="58.0" text="Name   :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label layoutX="14.0" layoutY="261.0" prefHeight="30.0" prefWidth="58.0" text="Email    :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label layoutX="14.0" layoutY="300.0" prefHeight="30.0" prefWidth="58.0" text="Role      :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label layoutX="14.0" layoutY="183.0" prefHeight="30.0" prefWidth="58.0" text="User Id :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="userID" layoutX="71.0" layoutY="186.0" prefHeight="25.0" prefWidth="134.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="email" layoutX="72.0" layoutY="264.0" prefHeight="25.0" prefWidth="132.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="fullName" layoutX="72.0" layoutY="226.0" prefHeight="25.0" prefWidth="132.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="Role" layoutX="72.0" layoutY="303.0" prefHeight="25.0" prefWidth="133.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                </left>
@@ -50,23 +74,23 @@
                      <children>
                         <AnchorPane layoutX="9.0" layoutY="12.0" prefHeight="190.0" prefWidth="854.0" stylesheets="@AdminDashboard.css">
                            <children>
-                              <AnchorPane layoutX="38.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff;" AnchorPane.bottomAnchor="15.400000000000006" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="581.2" AnchorPane.topAnchor="19.0" />
-                              <AnchorPane layoutX="313.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff;" />
-                              <AnchorPane layoutX="587.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff;" />
+                              <AnchorPane layoutX="38.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);;" AnchorPane.bottomAnchor="15.400000000000006" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="581.2" AnchorPane.topAnchor="19.0" />
+                              <AnchorPane layoutX="310.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);;" />
+                              <AnchorPane layoutX="587.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);;" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="9.0" layoutY="208.0" prefHeight="355.0" prefWidth="855.0">
                            <children>
-                              <TableView layoutX="2.0" layoutY="41.0" prefHeight="302.0" prefWidth="842.0">
+                              <TableView fx:id="userTable" layoutX="2.0" layoutY="41.0" prefHeight="302.0" prefWidth="842.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="ID" />
-                                  <TableColumn prefWidth="210.40007781982422" text="First Name" />
-                                    <TableColumn prefWidth="250.39999389648438" text="Last Name" />
-                                    <TableColumn prefWidth="164.80010986328125" text="Email" />
-                                    <TableColumn prefWidth="140.79998779296875" text=" Roles" />
+                                  <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="firstNameColumn" prefWidth="210.40007781982422" text="First Name" />
+                                    <TableColumn fx:id="lastNameColumn" prefWidth="250.39999389648438" text="Last Name" />
+                                    <TableColumn fx:id="emailColumn" prefWidth="164.80010986328125" text="Email" />
+                                    <TableColumn fx:id="roleColumn" prefWidth="140.79998779296875" text=" Roles" />
                                 </columns>
                               </TableView>
-                              <Label layoutX="332.0" layoutY="8.0" prefHeight="27.0" prefWidth="202.0" text="MENTER DETAILS TABLE">
+                              <Label layoutX="306.0" layoutY="7.0" prefHeight="27.0" prefWidth="264.0" text="MENTERS &amp; MENTEES DETAILS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
