@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.menter.application.mpms.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.menter.application.mpms.HelloController">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="345.0" style="-fx-background-color: #00e6e6;" BorderPane.alignment="CENTER">
          <children>
@@ -19,7 +19,7 @@
                   <Image url="@logo.png" />
                </image>
             </ImageView>
-            <Text layoutX="53.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENTER PROGRAM MANAGEMENT SYSTEM" textAlignment="CENTER" wrappingWidth="235.9749755859375">
+            <Text layoutX="8.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENTOR PROGRAM MANAGEMENT SYSTEM" textAlignment="CENTER" wrappingWidth="328.9749755859375">
                <font>
                   <Font name="Bell MT" size="24.0" />
                </font>
@@ -30,18 +30,33 @@
    <center>
       <AnchorPane prefHeight="500.0" prefWidth="343.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="101.0" layoutY="222.0" prefHeight="36.0" prefWidth="206.0" promptText="User Name" />
-            <PasswordField layoutX="103.0" layoutY="290.0" prefHeight="36.0" prefWidth="206.0" promptText="Password" />
-            <Button layoutX="141.0" layoutY="366.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="93.0" style="-fx-background-color: #00e6e6;" text="Login" textOverrun="CLIP">
+            <TextField fx:id="InputUsername" layoutX="101.0" layoutY="222.0" prefHeight="36.0" prefWidth="206.0" promptText="User Name" />
+            <PasswordField fx:id="InputUserPassword" layoutX="103.0" layoutY="290.0" prefHeight="36.0" prefWidth="206.0" promptText="Password" />
+            <Button fx:id="loginButton" layoutX="141.0" layoutY="366.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="93.0" style="-fx-background-color: #00e6e6;" text="Login" textOverrun="CLIP">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Text layoutX="131.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
+            <Text layoutX="131.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Bell MT" size="24.0" />
                </font>
             </Text>
+            <ImageView fitHeight="75.0" fitWidth="73.0" layoutX="151.0" layoutY="52.0">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="46.0" layoutY="227.0">
+               <image>
+                  <Image url="@id-card.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="26.0" layoutX="46.0" layoutY="297.0">
+               <image>
+                  <Image url="@hide.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
