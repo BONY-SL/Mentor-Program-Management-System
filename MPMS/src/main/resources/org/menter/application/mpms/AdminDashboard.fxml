@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -50,22 +51,10 @@
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font></Label>
-                        <Label fx:id="userID" layoutX="71.0" layoutY="186.0" prefHeight="25.0" prefWidth="134.0" text="Label">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font></Label>
-                        <Label fx:id="email" layoutX="72.0" layoutY="264.0" prefHeight="25.0" prefWidth="132.0" text="Label">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font></Label>
-                        <Label fx:id="fullName" layoutX="72.0" layoutY="226.0" prefHeight="25.0" prefWidth="132.0" text="Label">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font></Label>
-                        <Label fx:id="Role" layoutX="72.0" layoutY="303.0" prefHeight="25.0" prefWidth="133.0" text="Label">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font></Label>
+                        <Label fx:id="userID" layoutX="71.0" layoutY="186.0" prefHeight="25.0" prefWidth="134.0" text="Label" />
+                        <Label fx:id="email" layoutX="72.0" layoutY="264.0" prefHeight="25.0" prefWidth="132.0" text="Label" />
+                        <Label fx:id="fullName" layoutX="72.0" layoutY="226.0" prefHeight="25.0" prefWidth="132.0" text="Label" />
+                        <Label fx:id="Role" layoutX="72.0" layoutY="303.0" prefHeight="25.0" prefWidth="133.0" text="Label" />
                      </children>
                   </AnchorPane>
                </left>
@@ -74,9 +63,9 @@
                      <children>
                         <AnchorPane layoutX="9.0" layoutY="12.0" prefHeight="190.0" prefWidth="854.0" stylesheets="@AdminDashboard.css">
                            <children>
-                              <AnchorPane layoutX="38.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);;" AnchorPane.bottomAnchor="15.400000000000006" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="581.2" AnchorPane.topAnchor="19.0">
+                              <AnchorPane layoutX="38.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #80d4ff; -fx-background-radius: 20;" AnchorPane.bottomAnchor="15.400000000000006" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="581.2" AnchorPane.topAnchor="19.0">
                                  <children>
-                                    <ImageView fitHeight="49.0" fitWidth="48.0" layoutX="94.0" layoutY="45.0">
+                                    <ImageView fitHeight="86.0" fitWidth="87.0" layoutX="74.0" layoutY="6.0">
                                        <image>
                                           <Image url="@createGroup.png" />
                                        </image>
@@ -86,33 +75,42 @@
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                 </children></AnchorPane>
-                              <AnchorPane layoutX="310.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);;">
+                                 </children>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></AnchorPane>
+                              <AnchorPane layoutX="310.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #80d4ff; -fx-background-radius: 20;">
                                  <children>
-                                    <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="93.0" layoutY="45.0">
+                                    <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="85.0" layoutY="14.0">
                                        <image>
                                           <Image url="@groupv.png" />
                                        </image>
                                     </ImageView>
-                                    <Button layoutX="54.0" layoutY="106.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2); -fx-background-color: #80d4ff;" text="View Groups">
+                                    <Button layoutX="54.0" layoutY="106.0" mnemonicParsing="false" onAction="#showGroups" prefHeight="36.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2); -fx-background-color: #80d4ff;" text="View Groups">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                 </children></AnchorPane>
-                              <AnchorPane layoutX="587.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #66b3ff; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);;">
+                                 </children>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></AnchorPane>
+                              <AnchorPane layoutX="587.0" layoutY="19.0" prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: #80d4ff; -fx-background-radius: 20;">
                                  <children>
-                                    <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="95.0" layoutY="44.0">
-                                       <image>
-                                          <Image url="@profile.png" />
-                                       </image>
-                                    </ImageView>
                                     <Button layoutX="55.0" layoutY="106.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2); -fx-background-color: #80d4ff;" text="Update Profile">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                 </children></AnchorPane>
+                                    <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="75.0" layoutY="14.0">
+                                       <image>
+                                          <Image url="@social.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></AnchorPane>
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="9.0" layoutY="208.0" prefHeight="355.0" prefWidth="855.0">

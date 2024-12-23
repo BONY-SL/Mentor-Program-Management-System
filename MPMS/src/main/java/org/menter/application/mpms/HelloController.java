@@ -89,14 +89,18 @@ public class HelloController {
                 InputUserPassword.setText("");
                 break;
             case "MENTOR":
-                showAlert("Login Successful", "Welcome, Mentor! Redirecting to Mentor Dashboard.", Alert.AlertType.INFORMATION);
+                //showAlert("Login Successful", "Welcome, Mentor! Redirecting to Mentor Dashboard.", Alert.AlertType.INFORMATION);
                 // Load Mentor Dashboard
-                //loadDashboard("mentor-dashboard.fxml");
+                loadMentorDashBoard(user);
+                InputUsername.setText("");
+                InputUserPassword.setText("");
                 break;
             case "MENTEE":
-                showAlert("Login Successful", "Welcome, Mentee! Redirecting to Mentee Dashboard.", Alert.AlertType.INFORMATION);
+                //showAlert("Login Successful", "Welcome, Mentee! Redirecting to Mentee Dashboard.", Alert.AlertType.INFORMATION);
                 // Load Mentee Dashboard
-                //loadDashboard("mentee-dashboard.fxml");
+                loadMenteeDashBoard(user);
+                InputUsername.setText("");
+                InputUserPassword.setText("");
                 break;
             default:
                 showAlert("Error", "Unrecognized role: " + user.getRole(), Alert.AlertType.ERROR);
@@ -116,6 +120,62 @@ public class HelloController {
             adminDashboardController.setAdminProfile(user);
             adminDashboardController.initialize();
 
+
+            // Create and display the stage
+            Stage stage = new Stage();
+            stage.setTitle("MPMS");
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appicon.png"))));
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+            // Close the current login window
+            Stage currentStage = (Stage) loginButton.getScene().getWindow();
+            currentStage.close();
+        } catch (Exception e) {
+            showAlert("Error", "Failed to load Admin Dashboard: " + e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    private void loadMentorDashBoard(User user) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MentorDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1100, 600); // Adjust dimensions as needed
+
+            // Get the controller associated with the FXML file
+            MentorDashboardController mentorDashboardController = fxmlLoader.getController();
+
+            mentorDashboardController.setMentorProfile(user);
+            mentorDashboardController.setMyGroups();
+
+
+            // Create and display the stage
+            Stage stage = new Stage();
+            stage.setTitle("MPMS");
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appicon.png"))));
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+            // Close the current login window
+            Stage currentStage = (Stage) loginButton.getScene().getWindow();
+            currentStage.close();
+        } catch (Exception e) {
+            showAlert("Error", "Failed to load Admin Dashboard: " + e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    private void loadMenteeDashBoard(User user) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MenteeDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1100, 600); // Adjust dimensions as needed
+
+            // Get the controller associated with the FXML file
+            MenteeDashboardController menteeDashboardController = fxmlLoader.getController();
+
+            menteeDashboardController.setMenteeProfile(user);
+            menteeDashboardController.setMyGroups();
 
             // Create and display the stage
             Stage stage = new Stage();

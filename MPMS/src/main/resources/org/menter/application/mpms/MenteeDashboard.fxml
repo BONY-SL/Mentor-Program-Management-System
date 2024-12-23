@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.menter.application.mpms.MenteeDashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.menter.application.mpms.MenteeDashboardController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <children>
@@ -28,7 +28,7 @@
                                     <image>
                                         <Image url="@user1.png" />
                                     </image></ImageView>
-                                <Button layoutX="7.0" layoutY="475.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="215.0" style="-fx-background-radius: 10;" text="LOGOUT" />
+                                <Button fx:id="logOutButton" layoutX="50.0" layoutY="475.0" mnemonicParsing="false" onAction="#logOut" prefHeight="33.0" prefWidth="120.0" style="-fx-background-radius: 20; -fx-background-color: #3498db; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2);" text="LOGOUT" />
                                 <Label layoutX="13.0" layoutY="105.0" text="WELCOME MENTEE">
                                     <font>
                                         <Font name="Arial" size="20.0" />
@@ -51,10 +51,10 @@
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font></Label>
-                                <Label layoutX="72.0" layoutY="187.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
-                                <Label layoutX="72.0" layoutY="263.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
-                                <Label layoutX="72.0" layoutY="225.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
-                                <Label layoutX="72.0" layoutY="302.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
+                                <Label fx:id="userID" layoutX="72.0" layoutY="187.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
+                                <Label fx:id="email" layoutX="72.0" layoutY="263.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
+                                <Label fx:id="fullName" layoutX="72.0" layoutY="225.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
+                                <Label fx:id="Role" layoutX="72.0" layoutY="302.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
                             </children>
                         </AnchorPane>
                     </left>
@@ -113,12 +113,12 @@
                                 </AnchorPane>
                                 <AnchorPane layoutX="9.0" layoutY="208.0" prefHeight="355.0" prefWidth="855.0">
                                     <children>
-                                        <TableView layoutX="4.0" layoutY="41.0" prefHeight="302.0" prefWidth="842.0">
+                                        <TableView fx:id="myGroupsTable" layoutX="4.0" layoutY="41.0" prefHeight="302.0" prefWidth="842.0">
                                             <columns>
-                                                <TableColumn prefWidth="75.0" text="Group ID" />
-                                    <TableColumn prefWidth="363.99999237060547" text="Group Name" />
-                                    <TableColumn prefWidth="113.60006713867188" text="Mentor Id" />
-                                    <TableColumn prefWidth="289.5999755859375" text="Mentor Name" />
+                                                <TableColumn fx:id="GroupID" prefWidth="75.0" text="Group ID" />
+                                    <TableColumn fx:id="GroupName" prefWidth="363.99999237060547" text="Group Name" />
+                                    <TableColumn fx:id="MentorID" prefWidth="113.60006713867188" text="Mentor Id" />
+                                    <TableColumn fx:id="MentorName" prefWidth="289.5999755859375" text="Mentor Name" />
                                             </columns>
                                         </TableView>
                                         <Label layoutX="366.0" layoutY="8.0" prefHeight="27.0" prefWidth="145.0" text="GROUP DETAILS">
