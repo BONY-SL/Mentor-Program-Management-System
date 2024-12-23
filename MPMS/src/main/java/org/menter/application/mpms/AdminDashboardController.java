@@ -53,7 +53,6 @@ public class AdminDashboardController {
 
 
     public void setAdminProfile(User user) {
-
         userID.setText(String.valueOf(user.getId()));
         fullName.setText(user.getFirstName()+" "+user.getLastName());
         email.setText(user.getEmail());
