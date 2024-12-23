@@ -1,9 +1,12 @@
 package org.menter.application.mpms;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.menter.application.mpms.entity.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,15 +46,23 @@ public class HelloController {
             }
 
             // Query to authenticate the user
-            String query = "SELECT Role FROM User WHERE email = ? AND password = ?";
+            String query = "SELECT id, email, FirstName, LastName, Role FROM User WHERE email = ? AND password = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password); // Use hashed passwords in real applications
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                String role = resultSet.getString("Role");
-                redirectToDashboard(role);
+
+                //Create New User
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setEmail(resultSet.getString("email"));
+                user.setFirstName(resultSet.getString("FirstName"));
+                user.setLastName(resultSet.getString("LastName"));
+                user.setRole(resultSet.getString("Role"));
+                redirectToDashboard(user);
+
             } else {
                 showAlert("Login Failed", "Invalid email or password.", Alert.AlertType.ERROR);
             }
@@ -68,12 +79,12 @@ public class HelloController {
         }
     }
 
-    private void redirectToDashboard(String role) {
-        switch (role.toUpperCase()) {
+    private void redirectToDashboard(User user) {
+        switch (user.getRole().toUpperCase()) {
             case "ADMIN":
-                showAlert("Login Successful", "Welcome, Admin! Redirecting to Admin Dashboard.", Alert.AlertType.INFORMATION);
+                //showAlert("Login Successful", "Welcome, Admin! Redirecting to Admin Dashboard.", Alert.AlertType.INFORMATION);
                 // Load Admin Dashboard
-                //loadDashboard("admin-dashboard.fxml");
+                loadAdminDashboard(user);
                 InputUsername.setText("");
                 InputUserPassword.setText("");
                 break;
@@ -88,18 +99,37 @@ public class HelloController {
                 //loadDashboard("mentee-dashboard.fxml");
                 break;
             default:
-                showAlert("Error", "Unrecognized role: " + role, Alert.AlertType.ERROR);
+                showAlert("Error", "Unrecognized role: " + user.getRole(), Alert.AlertType.ERROR);
                 break;
         }
     }
 
-    private void loadDashboard(String fxmlFile) {
+    private void loadAdminDashboard(User user) {
         try {
-            javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlFile)));
-            javafx.stage.Stage stage = (javafx.stage.Stage) loginButton.getScene().getWindow();
-            stage.getScene().setRoot(root);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1100, 600); // Adjust dimensions as needed
+
+            // Get the controller associated with the FXML file
+            AdminDashboardController adminDashboardController = fxmlLoader.getController();
+
+            // Set the admin profile in the controller
+            adminDashboardController.setAdminProfile(user);
+            adminDashboardController.initialize();
+
+
+            // Create and display the stage
+            Stage stage = new Stage();
+            stage.setTitle("MPMS");
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appicon.png"))));
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+            // Close the current login window
+            Stage currentStage = (Stage) loginButton.getScene().getWindow();
+            currentStage.close();
         } catch (Exception e) {
-            showAlert("Error", "Failed to load dashboard: " + e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Error", "Failed to load Admin Dashboard: " + e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 

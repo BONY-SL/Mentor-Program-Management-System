@@ -8,6 +8,7 @@ module org.menter.application.mpms {
     requires mysql.connector.j;
     requires java.sql; // Include this for JDBC classes
 
+    opens org.menter.application.mpms.entity to javafx.base;
     opens org.menter.application.mpms to javafx.fxml;
     exports org.menter.application.mpms;
 }
