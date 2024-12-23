@@ -1,4 +1,4 @@
-package dao;
+package org.menter.application.mpms.dao;
 
 import org.menter.application.mpms.entity.User;
 import org.menter.application.mpms.service.DBConnection;
