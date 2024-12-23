@@ -1,7 +1,7 @@
 package org.menter.application.mpms;
 
 
-import dao.UserDAO;
+import org.menter.application.mpms.dao.UserDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -32,6 +32,9 @@ public class AdminDashboardController {
 
     @FXML
     private Button logOutButton;
+
+    @FXML
+    private Button createNewGroupButton;
 
     @FXML
     private TableView<User> userTable;
@@ -124,9 +127,44 @@ public class AdminDashboardController {
                 errorAlert.setContentText("An error occurred while logging out. Please try again.");
                 errorAlert.showAndWait();
             }
-        } else {
-            // User chose CANCEL or closed the dialog, so does nothing
         }
     }
+
+
+    @FXML
+    protected void createNewGroup() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("create-new-group.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 380, 520); // Adjust dimensions as needed
+
+            // Get the controller associated with the FXML file
+            CreateGroupController createGroupController = fxmlLoader.getController();
+            createGroupController.initialize();
+
+            // Create and display the stage
+            Stage stage = new Stage();
+            stage.setTitle("MPMS");
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appicon.png"))));
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (Exception e) {
+            showAlert("Error", "Failed to load Admin Dashboard: " + e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    private void showAlert(String title, String message, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle("MPMS");
+        alert.setContentText(message);
+
+        // Set the icon for the alert dialog
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appicon.png"))));
+
+        alert.showAndWait();
+    }
+
 
 }
