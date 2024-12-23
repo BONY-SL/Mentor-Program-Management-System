@@ -1,10 +1,12 @@
-# Mentor Group Management System
+# Mentor Programe Management System
 
 ## Project Description
-The Mentor Group Management System is a JavaFX-based desktop application designed to manage mentor-mentee relationships efficiently. Admins can create and manage groups consisting of mentors and mentees, facilitating streamlined communication and organization. This application uses Hibernate for ORM and MySQL as the database.
+The Mentor Programe Management System is a JavaFX-based desktop application designed to manage mentor-mentee relationships efficiently. Admins can create and manage groups consisting of mentors and mentees, facilitating streamlined communication and organization. This application uses Hibernate for ORM and MySQL as the database.
 
 ## Key Features
 - **Admin Dashboard**: A centralized interface for admins to manage groups, mentors, and mentees.
+- **Mentor Dashboard**: Show Each Mentors Groups.
+- **Mentee Dashboard**: Show Each Mentees Groups.
 - **Group Creation**: Allows admins to create mentor-mentee groups with unique IDs and names.
 - **Dynamic Data Binding**: Automatically fetches mentor and mentee IDs from the database and displays their names.
 - **Reset and Submit Options**: Ensures clean form handling and successful data submission.
@@ -12,39 +14,20 @@ The Mentor Group Management System is a JavaFX-based desktop application designe
 
 ## Technologies Used
 - **JavaFX**: For creating a responsive and visually appealing UI.
-- **Hibernate**: For ORM to interact with the MySQL database.
 - **MySQL**: Database for storing user and group information.
 - **IntelliJ IDEA**: IDE used for development.
 - **Scene Builder**: For designing FXML files.
 
-## Project Structure
-```
-org.menter.application.mpms
-├── controller
-│   ├── AdminDashboardController.java
-│   ├── CreateGroupController.java
-├── dao
-│   ├── UserDAO.java
-│   ├── GroupDAO.java
-├── entity
-│   ├── User.java
-│   ├── MentorGroup.java
-├── fxml
-│   ├── admin-dashboard.fxml
-│   ├── create-new-group.fxml
-├── resources
-│   ├── appicon.png
-├── Main.java
-```
 
 ## How to Run
 1. **Setup Database**:
-   - Import the provided SQL script to create and populate the necessary tables in MySQL.
-   - Update the Hibernate configuration file with your database credentials.
+   - Import the provided SQL script(database.sql) to create and populate the necessary databse and tables in MySQL.
 2. **Run the Application**:
    - Open the project in IntelliJ IDEA.
+   - Import The Mysql Conector j Jar File For Intelij Project Structure > Module > Dependencey
+   - Set Your MYSQL Local Host Password To DBConnection Java Class
    - Build the project to ensure all dependencies are resolved.
-   - Execute the `Main.java` file to launch the application.
+   - Execute the `HelloApplication.java` file to launch the application.
 3. **Use the Application**:
    - Log in as an admin.
    - Navigate to the Admin Dashboard to create and manage mentor groups.
@@ -76,6 +59,8 @@ org.menter.application.mpms
 | `group_name` | VARCHAR(255) | Name of the group             |
 | `mentor_id`  | INT          | Foreign Key referencing `users`|
 | `mentee_id`  | INT          | Foreign Key referencing `users`|
+| `mentor_name`  | Stirng          | |
+| `mentee_name`  | String          | |
 
 ## Future Improvements
 - Add functionality for editing and deleting groups.
@@ -83,11 +68,6 @@ org.menter.application.mpms
 - Enhance UI with modern JavaFX styling.
 - Add authentication for different user roles.
 
-## Contributors
-- [Your Name]
-
-## License
-This project is licensed under the MIT License.
 
 
 
