@@ -5,6 +5,8 @@ module org.menter.application.mpms {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires mysql.connector.j;
+    requires java.sql; // Include this for JDBC classes
 
     opens org.menter.application.mpms to javafx.fxml;
     exports org.menter.application.mpms;
