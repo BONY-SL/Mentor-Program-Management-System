@@ -153,6 +153,29 @@ public class AdminDashboardController {
         }
     }
 
+    @FXML
+    protected void showGroups() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("created-groups-show.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 289); // Adjust dimensions as needed
+
+            // Get the controller associated with the FXML file
+            ShowGroupsController showGroupsController = fxmlLoader.getController();
+            showGroupsController.initialize();
+
+            // Create and display the stage
+            Stage stage = new Stage();
+            stage.setTitle("MPMS");
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appicon.png"))));
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (Exception e) {
+            showAlert("Error", "Failed to load Admin Dashboard: " + e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
     private void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle("MPMS");

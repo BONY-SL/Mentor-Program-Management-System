@@ -86,7 +86,7 @@
                                           <Image url="@groupv.png" />
                                        </image>
                                     </ImageView>
-                                    <Button layoutX="54.0" layoutY="106.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2); -fx-background-color: #80d4ff;" text="View Groups">
+                                    <Button layoutX="54.0" layoutY="106.0" mnemonicParsing="false" onAction="#showGroups" prefHeight="36.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 2, 2); -fx-background-color: #80d4ff;" text="View Groups">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>

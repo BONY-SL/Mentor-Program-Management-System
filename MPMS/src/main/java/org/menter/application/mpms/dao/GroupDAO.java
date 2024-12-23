@@ -87,4 +87,29 @@ public class GroupDAO {
         }
         return mentorGroups;
     }
+
+    public List<MentorGroup> getAllGroups() {
+        List<MentorGroup> mentorGroups = new ArrayList<>();
+        String query = "SELECT * FROM mentorgroup";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    MentorGroup mentorGroup = new MentorGroup();
+                    mentorGroup.setId(resultSet.getInt("Id"));
+                    mentorGroup.setGroupName(resultSet.getString("GroupName"));
+                    mentorGroup.setMentorID(resultSet.getInt("MentorID"));
+                    mentorGroup.setMentorName(resultSet.getString("MentorName"));
+                    mentorGroup.setMenteeID(resultSet.getInt("MenteeID"));
+                    mentorGroup.setMenteeName(resultSet.getString("MenteeName"));
+                    mentorGroups.add(mentorGroup);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching users by role: " + e.getMessage());
+        }
+        return mentorGroups;
+    }
 }
