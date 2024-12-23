@@ -32,7 +32,7 @@
          <children>
             <TextField fx:id="InputUsername" layoutX="101.0" layoutY="222.0" prefHeight="36.0" prefWidth="206.0" promptText="User Name" />
             <PasswordField fx:id="InputUserPassword" layoutX="103.0" layoutY="290.0" prefHeight="36.0" prefWidth="206.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="141.0" layoutY="366.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="93.0" style="-fx-background-color: #00e6e6;" text="Login" textOverrun="CLIP">
+            <Button fx:id="loginButton" layoutX="141.0" layoutY="366.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="93.0" style="-fx-background-color: #00e6e6;" text="Login" textOverrun="CLIP">
                <font>
                   <Font size="15.0" />
                </font>
