@@ -34,10 +34,22 @@
                                     </font>
                                 </Label>
                                 <Line endX="205.1999969482422" endY="-1.52587890625E-5" layoutX="22.0" layoutY="142.0" startX="-21.999996185302734" startY="-1.52587890625E-5" />
-                                <Label layoutX="14.0" layoutY="223.0" prefHeight="30.0" prefWidth="58.0" text="Name :" textAlignment="CENTER" />
-                                <Label layoutX="14.0" layoutY="261.0" prefHeight="30.0" prefWidth="58.0" text="Email  :" textAlignment="CENTER" />
-                                <Label layoutX="14.0" layoutY="300.0" prefHeight="30.0" prefWidth="58.0" text="Role   :" textAlignment="CENTER" />
-                                <Label layoutX="14.0" layoutY="183.0" prefHeight="30.0" prefWidth="58.0" text="User Id :" textAlignment="CENTER" />
+                                <Label layoutX="14.0" layoutY="223.0" prefHeight="30.0" prefWidth="58.0" text="Name :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                                <Label layoutX="14.0" layoutY="261.0" prefHeight="30.0" prefWidth="58.0" text="Email  :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                                <Label layoutX="14.0" layoutY="300.0" prefHeight="30.0" prefWidth="58.0" text="Role   :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                                <Label layoutX="14.0" layoutY="183.0" prefHeight="30.0" prefWidth="58.0" text="User Id :" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
                                 <Label layoutX="72.0" layoutY="187.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
                                 <Label layoutX="72.0" layoutY="263.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
                                 <Label layoutX="72.0" layoutY="225.0" prefHeight="25.0" prefWidth="146.0" text="Label" />
@@ -64,7 +76,7 @@
                                                 <TableColumn prefWidth="250.39999389648438" text="Group No" />
                                             </columns>
                                         </TableView>
-                                        <Label layoutX="332.0" layoutY="8.0" prefHeight="27.0" prefWidth="135.0" text="GROUP DETAILS">
+                                        <Label layoutX="363.0" layoutY="8.0" prefHeight="27.0" prefWidth="135.0" text="GROUP DETAILS">
                                             <font>
                                                 <Font size="18.0" />
                                             </font>
